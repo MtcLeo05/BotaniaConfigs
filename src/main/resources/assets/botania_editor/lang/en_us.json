@@ -1,0 +1,11 @@
+{
+  "config.jade.plugin_botania_editor.botania_flower": "Botania Flower",
+  "config.jade.plugin_botania_editor.botania_spreader": "Botania Spreader",
+  "config.jade.plugin_botania_editor.botania_spreader_advanced": "Botania Spreader Advanced",
+  "config.jade.plugin_botania_editor.botania_mana": "Botania Mana",
+  "botania_editor.mana_display": "Mana: %d / %d",
+  "botania_editor.burst_info": "Mana each burst: %d",
+  "botania_editor.loss_info": "Mana loss each tick: %d",
+  "botania_editor.orechid_stats": "Cost each block: %d / Delay each block: %d",
+  "botania_editor.orechid_range": "Horizontal Range: %d, Vertical Range %d"
+}

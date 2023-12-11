@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.mtcleo05.botania_editor.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "BotaniaEditor.refmap.json",
+  "mixins": [
+    "EndoflameMixin",
+    "OrechidIgnemMixin",
+    "OrechidMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
