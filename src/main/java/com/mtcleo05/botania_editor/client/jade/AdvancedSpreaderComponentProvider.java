@@ -9,6 +9,7 @@ import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.ITooltip;
 import snownee.jade.api.config.IPluginConfig;
+import vazkii.botania.api.internal.ManaBurst;
 import vazkii.botania.common.block.block_entity.mana.ManaSpreaderBlockEntity;
 
 @OnlyIn(Dist.CLIENT)
@@ -20,10 +21,13 @@ public enum AdvancedSpreaderComponentProvider implements IBlockComponentProvider
     public void appendTooltip(ITooltip iTooltip, BlockAccessor blockAccessor, IPluginConfig iPluginConfig) {
         try{
             ManaSpreaderBlockEntity manaSpreaderEntity = (ManaSpreaderBlockEntity) blockAccessor.getBlockEntity();
+            ManaBurst burstSim = manaSpreaderEntity.runBurstSimulation();
+
             iTooltip.add(Component.translatable("botania_editor.burst_info",
-                    manaSpreaderEntity.runBurstSimulation().getMana()));
+                    burstSim.getMana()));
             iTooltip.add(Component.translatable("botania_editor.loss_info",
-                        manaSpreaderEntity.runBurstSimulation().getManaLossPerTick()));
+                    burstSim.getManaLossPerTick()));
+
         } catch (Exception ignored){}
     }
 
