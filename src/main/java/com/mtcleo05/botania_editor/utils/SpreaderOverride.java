@@ -39,11 +39,16 @@ public class SpreaderOverride {
 
         Field lossPerTick = mana.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
-        lossPerTick.setFloat(mana, CommonConfig.MANA_SPREADER_LOSS_TICK.get());
+        lossPerTick.setFloat(mana,
+                //I know it's redundant, but it's a bit finicky and sometimes breaks
+                Float.valueOf(CommonConfig.MANA_SPREADER_LOSS_TICK.get())
+        );
 
         Field motionModifier = mana.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
-        motionModifier.setFloat(mana, CommonConfig.MANA_SPREADER_BURST_SPEED.get());
+        motionModifier.setFloat(mana,
+                Float.valueOf(CommonConfig.MANA_SPREADER_BURST_SPEED.get())
+        );
     }
 
     public static void changeRedstone() throws NoSuchFieldException, IllegalAccessException {
@@ -76,11 +81,15 @@ public class SpreaderOverride {
 
         Field lossPerTick = redstone.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
-        lossPerTick.setFloat(redstone, CommonConfig.REDSTONE_SPREADER_LOSS_TICK.get());
+        lossPerTick.setFloat(redstone,
+                Float.valueOf(CommonConfig.REDSTONE_SPREADER_LOSS_TICK.get()))
+        ;
 
         Field motionModifier = redstone.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
-        motionModifier.setFloat(redstone, CommonConfig.REDSTONE_SPREADER_BURST_SPEED.get());
+        motionModifier.setFloat(redstone,
+                Float.valueOf(CommonConfig.REDSTONE_SPREADER_BURST_SPEED.get())
+        );
     }
 
     public static void changeElven() throws NoSuchFieldException, IllegalAccessException {
@@ -113,11 +122,15 @@ public class SpreaderOverride {
 
         Field lossPerTick = elven.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
-        lossPerTick.setFloat(elven, CommonConfig.ELVEN_SPREADER_LOSS_TICK.get());
+        lossPerTick.setFloat(elven,
+                Float.valueOf(CommonConfig.ELVEN_SPREADER_LOSS_TICK.get())
+        );
 
         Field motionModifier = elven.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
-        motionModifier.setFloat(elven, CommonConfig.ELVEN_SPREADER_BURST_SPEED.get());
+        motionModifier.setFloat(elven,
+                Float.valueOf(CommonConfig.ELVEN_SPREADER_BURST_SPEED.get())
+        );
     }
 
     public static void changeGaia() throws NoSuchFieldException, IllegalAccessException {
@@ -150,11 +163,15 @@ public class SpreaderOverride {
 
         Field lossPerTick = gaia.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
-        lossPerTick.setFloat(gaia, CommonConfig.GAIA_SPREADER_LOSS_TICK.get());
+        lossPerTick.setFloat(gaia,
+                Float.valueOf(CommonConfig.GAIA_SPREADER_LOSS_TICK.get())
+        );
 
         Field motionModifier = gaia.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
-        motionModifier.setFloat(gaia, CommonConfig.GAIA_SPREADER_BURST_SPEED.get());
+        motionModifier.setFloat(gaia,
+                Float.valueOf(CommonConfig.GAIA_SPREADER_BURST_SPEED.get())
+        );
     }
 
 

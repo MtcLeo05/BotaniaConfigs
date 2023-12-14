@@ -43,6 +43,13 @@ public class CommonConfig {
 
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDOFLAME_PROD;
+    public static final ForgeConfigSpec.ConfigValue<Integer> HYDROANGEAS_TICK;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> BLACK_LOTUS_MANA;
+    public static final ForgeConfigSpec.ConfigValue<Integer> BLACKER_LOTUS_MANA;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> MANA_POOL_MAX_MANA;
+    public static final ForgeConfigSpec.ConfigValue<Integer> DILUTED_MANA_POOL_MAX_MANA;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ORECHID_COST;
     public static final ForgeConfigSpec.ConfigValue<Integer> ORECHID_COST_GOG;
@@ -74,6 +81,34 @@ public class CommonConfig {
                 BUILDER.comment("Production of endoflame")
                         .comment("This is mana each tick, to know how much mana/sec multiply by 20 [5]")
                         .defineInRange("Endoflame production", 5, 1, 100);
+
+        HYDROANGEAS_TICK =
+                BUILDER.comment("Hydroangeas duration")
+                        .comment("How many ticks should hydroangeas last [72000]")
+                        .comment("Put a value equal or below 0 to disable it")
+                        .define("Hydroangeas Ticks", 72000);
+
+        BLACK_LOTUS_MANA =
+                BUILDER.comment("Mana each black lotus")
+                        .comment("How much mana should the black lotus give [8000]")
+                        .define("Black Lotus Mana", 8000);
+
+        BLACKER_LOTUS_MANA =
+                BUILDER.comment("Mana each blacker lotus")
+                        .comment("How much mana should the black lotus give [100000]")
+                        .define("Blacker Lotus Mana", 100000);
+
+        MANA_POOL_MAX_MANA =
+                BUILDER.comment("Mana pool mana")
+                        .comment("How much mana can a mana pool contain [1000000]")
+                        .comment("This only affects mana pools placed after the configs is changed!")
+                        .define("Mana Pool Max Mana", 1000000);
+
+        DILUTED_MANA_POOL_MAX_MANA =
+                BUILDER.comment("Diluted mana pool mana")
+                        .comment("How much mana can a diluted mana pool contain [10000]")
+                        .comment("This only affects mana pools placed after the configs is changed!")
+                        .define("Diluted Mana Pool Max Mana", 10000);
 
         ORECHID_COST =
                 BUILDER.comment("Cost of orechid each block")
