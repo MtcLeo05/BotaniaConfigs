@@ -19,7 +19,7 @@ public class JadeBotaniaTooltip implements IWailaPlugin {
         if(CommonConfig.SHOULD_SHOW_MANA_TOOLTIP.get()) {
             registration.registerBlockComponent(ManaPoolComponentProvider.INSTANCE, ManaPoolBlock.class);
             //I have to check each block 'cause idk which block uses this block entity
-            //I should have sure that it doesn't do anything unless it's a generating flower
+            //I should make sure that it doesn't do anything unless it's a generating flower
             registration.registerBlockComponent(GeneratingFlowerComponentProvider.INSTANCE, Block.class);
             registration.registerBlockComponent(SpreaderComponentProvider.INSTANCE, ManaSpreaderBlock.class);
             if(CommonConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
