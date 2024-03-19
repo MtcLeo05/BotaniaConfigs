@@ -40,14 +40,13 @@ public class SpreaderOverride {
         Field lossPerTick = mana.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
         lossPerTick.setFloat(mana,
-                //I know it's redundant, but it's a bit finicky and sometimes breaks
-                Float.valueOf(CommonConfig.MANA_SPREADER_LOSS_TICK.get())
+            CommonConfig.MANA_SPREADER_LOSS_TICK.get()
         );
 
         Field motionModifier = mana.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
         motionModifier.setFloat(mana,
-                Float.valueOf(CommonConfig.MANA_SPREADER_BURST_SPEED.get())
+            CommonConfig.MANA_SPREADER_BURST_SPEED.get()
         );
     }
 

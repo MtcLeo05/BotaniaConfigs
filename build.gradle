@@ -134,6 +134,14 @@ repositories {
     maven {
         url "https://cursemaven.com"
     }
+
+    maven {
+        url "https://maven2.bai.lol"
+        content {
+            includeGroup "lol.bai"
+            includeGroup "mcp.mobius.waila"
+        }
+    }
 }
 
 dependencies {
@@ -150,6 +158,11 @@ dependencies {
     implementation fg.deobf("curse.maven:jade-324717:4914105")
     implementation fg.deobf("curse.maven:jei-238222:4712866")
 
+    compileOnly fg.deobf("mcp.mobius.waila:wthit-api:forge-${wthitVersion}")
+
+    runtimeOnly fg.deobf("mcp.mobius.waila:wthit:forge-${wthitVersion}")
+    runtimeOnly fg.deobf("lol.bai:badpackets:forge-${badpacketsVersion}")
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -164,6 +177,7 @@ tasks.named('processResources', ProcessResources).configure {
             loader_version_range: loader_version_range,
             mod_id: mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
             mod_authors: mod_authors, mod_description: mod_description,
+            badpacketVersion: badpacketsVersion, wthitVersion: wthitVersion
     ]
 
     inputs.properties replaceProperties

@@ -71,6 +71,14 @@ description='''${mod_description}'''
    side="BOTH"
 
 [[dependencies.${mod_id}]]
+   modId="wthit"
+   mandatory=false
+   # This version range declares a minimum of the current minecraft version up to but not including the next major version
+   versionRange="[5.23.0, 5.24.0)"
+   ordering="NONE"
+   side="BOTH"
+
+[[dependencies.${mod_id}]]
    modId="botania"
    mandatory=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version

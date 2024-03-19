@@ -1,0 +1,7 @@
+{
+  "botania_editor:botania": {
+    "initializer": "com.mtcleo05.botania_editor.client.wthit.WTHITBotaniaTooltip",
+    "side": "*",
+    "required": []
+  }
+}
