@@ -17,7 +17,7 @@ import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
 public abstract class FluidGeneratorMixin extends GeneratingFlowerBlockEntity {
 
     @Mutable
-    @Shadow @Final private int manaPerTick;
+    @Shadow(remap = false) @Final private int manaPerTick;
     @Unique
     boolean isHydroangeas = false;
 

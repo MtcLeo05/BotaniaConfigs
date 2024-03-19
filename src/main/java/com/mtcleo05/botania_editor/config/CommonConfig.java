@@ -62,26 +62,30 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> ORECHID_IGNEM_COST;
 
     static {
-        BUILDER.push("Non reloadable configs");
-        BUILDER.comment("These configs require a game restart");
+        BUILDER.push("Jade Config");
 
         SHOULD_SHOW_MANA_TOOLTIP =
-            BUILDER.comment("Should jade show how much mana the pool has?")
+            BUILDER.comment("Should jade show botania information?")
                 .define("Should show mana tooltip", true);
+
         SHOULD_SHOW_ADVANCED_TOOLTIP =
             BUILDER.comment("Should jade show advanced configs?")
                 .comment("For example how much mana does a spreader pass each burst")
                 .comment("This config is useless if [Should Show Mana Tooltip] is false")
                 .define("Should show advanced tooltip", true);
+
         BUILDER.pop();
 
-        BUILDER.push("Reloadable configs");
-        BUILDER.comment("These configs require the /reload command to be executed");
+        BUILDER.push("Endoflame Config");
 
         ENDOFLAME_PROD =
             BUILDER.comment("Production of endoflame")
                 .comment("This is mana each tick, to know how much mana/sec multiply by 20 [3]")
                 .defineInRange("Endoflame Production", 3, 1, 100);
+
+        BUILDER.pop();
+
+        BUILDER.push("Hydroangeas / Thermalily Config");
 
         HYDROANGEAS_TICK =
             BUILDER.comment("Hydroangeas duration")
@@ -92,14 +96,16 @@ public class CommonConfig {
         HYDROANGEAS_PROD =
             BUILDER.comment("Hydroangeas production")
                 .comment("How much mana should it produce each tick [1]")
-                .comment("Put a value equal or below 0 to disable it")
                 .defineInRange("Hydroangeas Production", 1, 1, 100);
 
         THERMALILY_PROD =
             BUILDER.comment("Thermalily production")
                 .comment("How much mana should it produce each tick [20]")
-                .comment("Put a value equal or below 0 to disable it")
                 .defineInRange("Thermalily Production", 20, 1, 100);
+
+        BUILDER.pop();
+
+        BUILDER.push("Lotus Config");
 
         BLACK_LOTUS_MANA =
             BUILDER.comment("Mana each black lotus")
@@ -108,31 +114,29 @@ public class CommonConfig {
 
         BLACKER_LOTUS_MANA =
             BUILDER.comment("Mana each blacker lotus")
-                .comment("How much mana should the black lotus give [100000]")
+                .comment("How much mana should the blacker lotus give [100000]")
                 .define("Blacker Lotus Mana", 100000);
 
-        MANA_POOL_MAX_MANA =
-            BUILDER.comment("Mana pool mana")
-                .comment("How much mana can a mana pool contain [1000000]")
-                .comment("This only affects mana pools placed after the configs is changed!")
-                .define("Mana Pool Max Mana", 1000000);
+        BUILDER.pop();
 
-        DILUTED_MANA_POOL_MAX_MANA =
-            BUILDER.comment("Diluted mana pool mana")
-                .comment("How much mana can a diluted mana pool contain [10000]")
-                .comment("This only affects mana pools placed after the configs is changed!")
-                .define("Diluted Mana Pool Max Mana", 10000);
+        BUILDER.push("Orechid Config");
 
         ORECHID_COST =
             BUILDER.comment("Cost of orechid each block")
                 .comment("How much mana should orechid consume each block [17500]")
                 .defineInRange("Orechid cost", 5, 1, 100000000);
 
+        ORECHID_IGNEM_COST =
+            BUILDER.comment("Cost of orechid ignem each block")
+                .comment("How much mana should orechid ignem consume each block [20000]")
+                .defineInRange("Orechid ignem Cost", 20000, 1, 100000000);
+
         ORECHID_COST_GOG =
             BUILDER.comment("Cost of orechid each block in garden of glass")
                 .comment("How much mana should orechid consume each block, when in a garden of glass word [700]")
                 .comment("Usually this cost is lower than the normal, but it's not a rule")
                 .defineInRange("Orechid cost GOG", 700, 1, 100000000);
+
         ORECHID_DELAY =
             BUILDER.comment("Ticks between a block conversion and the other")
                 .comment("How much time should the orechid wait before attempting to convert another block [100]")
@@ -151,6 +155,7 @@ public class CommonConfig {
                 .comment("Increasing this too much could cause lag since a lot of blocks are being checked")
                 .comment("This affects both orechid and orechid ignem")
                 .defineInRange("Orechid range", 5, 1, 100);
+
         ORECHID_RANGE_Y =
             BUILDER.comment("Vertical range of orechid")
                 .comment("The height of the cube where the orechid checks if there are convertible blocks [3]")
@@ -158,10 +163,23 @@ public class CommonConfig {
                 .comment("This affects both orechid and orechid ignem")
                 .defineInRange("Orechid range Y", 3, 1, 100);
 
-        ORECHID_IGNEM_COST =
-            BUILDER.comment("Cost of orechid ignem each block")
-                .comment("How much mana should orechid ignem consume each block [20000]")
-                .defineInRange("Orechid ignem Cost", 20000, 1, 100000000);
+        BUILDER.pop();
+
+        BUILDER.push("Mana Pool Config");
+
+        MANA_POOL_MAX_MANA =
+            BUILDER.comment("Mana pool mana")
+                .comment("How much mana can a mana pool contain [1000000]")
+                .comment("This only affects mana pools placed after the configs is changed!")
+                .define("Mana Pool Max Mana", 1000000);
+
+        DILUTED_MANA_POOL_MAX_MANA =
+            BUILDER.comment("Diluted mana pool mana")
+                .comment("How much mana can a diluted mana pool contain [10000]")
+                .comment("This only affects mana pools placed after the configs is changed!")
+                .define("Diluted Mana Pool Max Mana", 10000);
+
+        BUILDER.pop();
 
         BUILDER.push("Mana Spreader Config");
 
@@ -310,7 +328,7 @@ public class CommonConfig {
                 .comment("Default [1.0]")
                 .define("Burst speed", 2.0f);
 
-        BUILDER.pop(2);
+        BUILDER.pop();
         SPEC = BUILDER.build();
     }
 
