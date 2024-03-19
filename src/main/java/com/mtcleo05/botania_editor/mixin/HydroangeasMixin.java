@@ -7,7 +7,6 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Fluid;
-import org.checkerframework.common.aliasing.qual.Unique;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -19,8 +18,6 @@ public class HydroangeasMixin extends FluidGeneratorBlockEntity {
 
     @Shadow(remap = false)
     private int passiveDecayTicks;
-
-
 
     protected HydroangeasMixin(BlockEntityType<?> type, BlockPos pos, BlockState state, TagKey<Fluid> consumedFluid, int startBurnTime, int manaPerTick) {
         super(type, pos, state, consumedFluid, startBurnTime, manaPerTick);

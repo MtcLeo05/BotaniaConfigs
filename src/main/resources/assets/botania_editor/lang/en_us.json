@@ -7,5 +7,7 @@
   "botania_editor.burst_info": "Mana each burst: %d",
   "botania_editor.loss_info": "Mana loss each tick: %d",
   "botania_editor.orechid_stats": "Cost each block: %d / Delay each block: %d",
-  "botania_editor.orechid_range": "Horizontal Range: %d, Vertical Range %d"
+  "botania_editor.orechid_range": "Horizontal Range: %d, Vertical Range %d",
+  "botania_editor.prod": "Production / Tick: %d",
+  "botania_editor.decay": "Decay: %d ticks"
 }

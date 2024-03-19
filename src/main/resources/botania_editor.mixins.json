@@ -6,6 +6,7 @@
   "refmap": "BotaniaEditor.refmap.json",
   "mixins": [
     "EndoflameMixin",
+    "FluidGeneratorMixin",
     "HydroangeasMixin",
     "LotusMixin",
     "ManaPoolMixin",

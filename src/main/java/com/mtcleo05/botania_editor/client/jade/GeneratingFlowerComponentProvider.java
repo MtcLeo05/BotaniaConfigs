@@ -1,12 +1,15 @@
 package com.mtcleo05.botania_editor.client.jade;
 
 import com.mtcleo05.botania_editor.BotaniaEditor;
+import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.utils.JadeUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeConfigSpec;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.ITooltip;
@@ -15,6 +18,8 @@ import snownee.jade.api.ui.IElement;
 import snownee.jade.api.ui.IElementHelper;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.item.BotaniaItems;
+
+import java.util.List;
 
 @OnlyIn(Dist.CLIENT)
 public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider {
@@ -33,6 +38,23 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
                 icon.message(null);
                 iTooltip.add(icon);
                 iTooltip.append(Component.translatable("botania_editor.mana_display", generatingFlowerEntity.getMana(), generatingFlowerEntity.getMaxMana()));
+
+                if(CommonConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
+                    if(JadeUtils.JADE_FLOWER_MAP.containsKey(generatingFlowerEntity.getClass())){
+
+                        List<ForgeConfigSpec.ConfigValue<?>> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());
+
+                        for (int i = 0; i < configs.size(); i++) {
+                            if(i == 0){
+                                iTooltip.add(Component.translatable("botania_editor.prod", configs.get(i).get()));
+                            }
+
+                            if(i == 1){
+                                iTooltip.add(Component.translatable("botania_editor.decay", configs.get(i).get()));
+                            }
+                        }
+                    }
+                }
             }
         } catch (Exception ignored){}
     }
