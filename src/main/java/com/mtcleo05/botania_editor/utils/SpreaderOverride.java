@@ -40,13 +40,13 @@ public class SpreaderOverride {
         Field lossPerTick = mana.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
         lossPerTick.setFloat(mana,
-            CommonConfig.MANA_SPREADER_LOSS_TICK.get()
+                Float.valueOf(CommonConfig.MANA_SPREADER_LOSS_TICK.get())
         );
 
         Field motionModifier = mana.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
         motionModifier.setFloat(mana,
-            CommonConfig.MANA_SPREADER_BURST_SPEED.get()
+                Float.valueOf(CommonConfig.MANA_SPREADER_BURST_SPEED.get())
         );
     }
 
@@ -81,8 +81,8 @@ public class SpreaderOverride {
         Field lossPerTick = redstone.getClass().getField("lossPerTick");
         lossPerTick.setAccessible(true);
         lossPerTick.setFloat(redstone,
-                Float.valueOf(CommonConfig.REDSTONE_SPREADER_LOSS_TICK.get()))
-        ;
+                Float.valueOf(CommonConfig.REDSTONE_SPREADER_LOSS_TICK.get())
+        ) ;
 
         Field motionModifier = redstone.getClass().getField("motionModifier");
         motionModifier.setAccessible(true);
