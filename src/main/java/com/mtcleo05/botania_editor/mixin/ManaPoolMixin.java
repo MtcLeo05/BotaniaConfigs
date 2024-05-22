@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,7 +39,7 @@ public class ManaPoolMixin extends BotaniaBlockEntity {
     @Overwrite(remap = false)
     private void initManaCapAndNetwork() {
         if (this.getMaxMana() == -1) {
-            this.manaCap = ((ManaPoolBlock)this.getBlockState().getBlock()).variant == ManaPoolBlock.Variant.DILUTED ? CommonConfig.DILUTED_MANA_POOL_MAX_MANA.get() : CommonConfig.MANA_POOL_MAX_MANA.get();
+            this.manaCap = ((ManaPoolBlock)this.getBlockState().getBlock()).variant == ManaPoolBlock.Variant.DILUTED ? ServerConfig.DILUTED_MANA_POOL_MAX_MANA.get() : ServerConfig.MANA_POOL_MAX_MANA.get();
         }
 
         if (!ManaNetworkHandler.instance.isPoolIn(this.level, (ManaPool) this) && !this.isRemoved()) {

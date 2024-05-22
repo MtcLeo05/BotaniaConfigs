@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.block.Blocks;
@@ -31,8 +32,8 @@ public class HydroangeasMixin extends FluidGeneratorBlockEntity {
     public void tickFlower() {
         super.tickFlower();
 
-        if(CommonConfig.HYDROANGEAS_TICK.get() > 0){
-            if (!this.getLevel().isClientSide && ++this.passiveDecayTicks > CommonConfig.HYDROANGEAS_TICK.get()) {
+        if(ServerConfig.HYDROANGEAS_TICK.get() > 0){
+            if (!this.getLevel().isClientSide && ++this.passiveDecayTicks > ServerConfig.HYDROANGEAS_TICK.get()) {
                 this.getLevel().destroyBlock(this.getBlockPos(), false);
                 if (Blocks.DEAD_BUSH.defaultBlockState().canSurvive(this.getLevel(), this.getBlockPos())) {
                     this.getLevel().setBlockAndUpdate(this.getBlockPos(), Blocks.DEAD_BUSH.defaultBlockState());

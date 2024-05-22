@@ -1,6 +1,6 @@
 package com.mtcleo05.botania_editor.client.wthit;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
 import com.mtcleo05.botania_editor.utils.JadeUtils;
 import mcp.mobius.waila.api.IBlockAccessor;
 import mcp.mobius.waila.api.IBlockComponentProvider;
@@ -27,7 +27,7 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
             if(generatingFlowerEntity != null){
                 iTooltip.addLine(Component.translatable("botania_editor.mana_display", generatingFlowerEntity.getMana(), generatingFlowerEntity.getMaxMana()));
 
-                if(CommonConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
+                if(ClientConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
                     if(JadeUtils.JADE_FLOWER_MAP.containsKey(generatingFlowerEntity.getClass())){
 
                         List<ForgeConfigSpec.ConfigValue<?>> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());

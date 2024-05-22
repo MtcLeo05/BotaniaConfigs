@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.utils;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.ForgeConfigSpec;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
@@ -20,22 +21,22 @@ public class JadeUtils {
         JADE_FLOWER_MAP.put(
             EndoflameBlockEntity.class,
             List.of(
-                CommonConfig.ENDOFLAME_PROD
+                ServerConfig.ENDOFLAME_PROD
             )
         );
 
         JADE_FLOWER_MAP.put(
             HydroangeasBlockEntity.class,
             List.of(
-                CommonConfig.HYDROANGEAS_PROD,
-                CommonConfig.HYDROANGEAS_TICK
+                ServerConfig.HYDROANGEAS_PROD,
+                ServerConfig.HYDROANGEAS_TICK
             )
         );
 
         JADE_FLOWER_MAP.put(
             ThermalilyBlockEntity.class,
             List.of(
-                CommonConfig.THERMALILY_PROD
+                ServerConfig.THERMALILY_PROD
             )
         );
     }
