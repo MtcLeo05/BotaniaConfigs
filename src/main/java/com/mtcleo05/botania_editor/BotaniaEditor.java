@@ -1,7 +1,8 @@
 package com.mtcleo05.botania_editor;
 
 import com.mojang.logging.LogUtils;
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import com.mtcleo05.botania_editor.utils.SpreaderOverride;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -12,8 +13,6 @@ import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.config.ModConfigEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
-
-import java.lang.reflect.Field;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(BotaniaEditor.MODID)
@@ -44,19 +43,24 @@ public class BotaniaEditor {
             }
         });
 
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, CommonConfig.SPEC, MODID+"-common.toml");
-
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, ServerConfig.SPEC, MODID+"-server.toml");
+        ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, ClientConfig.SPEC, MODID+"-client.toml");
 
         MinecraftForge.EVENT_BUS.register(this);
     }
 
     @SubscribeEvent
     public void onConfigLoading(ModConfigEvent.Loading event) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
-        SpreaderOverride.setupSpreaders();
+        if(ServerConfig.SPEC.isLoaded()){
+            SpreaderOverride.setupSpreaders();
+        }
+
     }
 
     @SubscribeEvent
     public void onConfigReloading(ModConfigEvent.Reloading event) throws NoSuchFieldException, IllegalAccessException, InstantiationException {
-        SpreaderOverride.setupSpreaders();
+        if(ServerConfig.SPEC.isLoaded()){
+            SpreaderOverride.setupSpreaders();
+        }
     }
 }

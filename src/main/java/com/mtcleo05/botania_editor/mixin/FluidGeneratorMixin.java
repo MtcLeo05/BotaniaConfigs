@@ -1,6 +1,6 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -32,7 +32,7 @@ public abstract class FluidGeneratorMixin extends GeneratingFlowerBlockEntity {
 
            isHydroangeas = entity instanceof HydroangeasBlockEntity;
 
-           this.manaPerTick = isHydroangeas ? CommonConfig.HYDROANGEAS_PROD.get(): CommonConfig.THERMALILY_PROD.get();
+           this.manaPerTick = isHydroangeas ? ServerConfig.HYDROANGEAS_PROD.get(): ServerConfig.THERMALILY_PROD.get();
        }
     }
 }

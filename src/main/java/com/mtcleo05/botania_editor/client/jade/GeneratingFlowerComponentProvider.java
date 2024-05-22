@@ -1,7 +1,8 @@
 package com.mtcleo05.botania_editor.client.jade;
 
 import com.mtcleo05.botania_editor.BotaniaEditor;
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import com.mtcleo05.botania_editor.utils.JadeUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -39,7 +40,7 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
                 iTooltip.add(icon);
                 iTooltip.append(Component.translatable("botania_editor.mana_display", generatingFlowerEntity.getMana(), generatingFlowerEntity.getMaxMana()));
 
-                if(CommonConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
+                if(ClientConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
                     if(JadeUtils.JADE_FLOWER_MAP.containsKey(generatingFlowerEntity.getClass())){
 
                         List<ForgeConfigSpec.ConfigValue<?>> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());

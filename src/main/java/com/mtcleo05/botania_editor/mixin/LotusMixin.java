@@ -1,6 +1,6 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.world.entity.item.ItemEntity;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -25,7 +25,7 @@ public class LotusMixin {
 
     @ModifyArg(remap = false, method = "onDissolveTick", at = @At(value = "INVOKE", target = "Lvazkii/botania/api/mana/ManaPool;receiveMana(I)V"))
     public int changeLotusMana(int old){
-        return isBlacker ? CommonConfig.BLACKER_LOTUS_MANA.get() : CommonConfig.BLACK_LOTUS_MANA.get();
+        return isBlacker ? ServerConfig.BLACKER_LOTUS_MANA.get() : ServerConfig.BLACK_LOTUS_MANA.get();
     }
 
 }

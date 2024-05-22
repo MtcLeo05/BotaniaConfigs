@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.client.jade;
 
-import com.mtcleo05.botania_editor.config.CommonConfig;
+import com.mtcleo05.botania_editor.config.ClientConfig;
+import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -16,13 +17,13 @@ public class JadeBotaniaTooltip implements IWailaPlugin {
     @Override
     @OnlyIn(Dist.CLIENT)
     public void registerClient(IWailaClientRegistration registration) {
-        if(CommonConfig.SHOULD_SHOW_MANA_TOOLTIP.get()) {
+        if(ClientConfig.SHOULD_SHOW_MANA_TOOLTIP.get()) {
             registration.registerBlockComponent(ManaPoolComponentProvider.INSTANCE, ManaPoolBlock.class);
             //I have to check each block 'cause idk which block uses this block entity
             //I should make sure that it doesn't do anything unless it's a generating flower
             registration.registerBlockComponent(GeneratingFlowerComponentProvider.INSTANCE, Block.class);
             registration.registerBlockComponent(SpreaderComponentProvider.INSTANCE, ManaSpreaderBlock.class);
-            if(CommonConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
+            if(ClientConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
                 registration.registerBlockComponent(AdvancedSpreaderComponentProvider.INSTANCE, ManaSpreaderBlock.class);
                 //Same as generating flower
                 registration.registerBlockComponent(OrechidComponentProvider.INSTANCE, Block.class);

@@ -66,7 +66,7 @@ description='''${mod_description}'''
    modId="jade"
    mandatory=false
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[8.9.2, 9)"
+   versionRange="[11.9.2, 12)"
    ordering="NONE"
    side="BOTH"
 
@@ -74,7 +74,7 @@ description='''${mod_description}'''
    modId="wthit"
    mandatory=false
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[5.23.0, 5.24.0)"
+   versionRange="[8.10.0, 9.0.0)"
    ordering="NONE"
    side="BOTH"
 
@@ -82,7 +82,7 @@ description='''${mod_description}'''
    modId="botania"
    mandatory=true
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
-   versionRange="[1.19.2, 1.20)"
+   versionRange="[1.20.1, 1.21)"
    ordering="NONE"
    side="BOTH"
 

@@ -2,44 +2,41 @@ package com.mtcleo05.botania_editor.config;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 
-public class CommonConfig {
+public class ServerConfig {
     public static final ForgeConfigSpec.Builder BUILDER = new ForgeConfigSpec.Builder();
     public static final ForgeConfigSpec SPEC;
-
-    public static final ForgeConfigSpec.ConfigValue<Boolean> SHOULD_SHOW_MANA_TOOLTIP;
-    public static final ForgeConfigSpec.ConfigValue<Boolean> SHOULD_SHOW_ADVANCED_TOOLTIP;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> MANA_SPREADER_BURST_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> MANA_SPREADER_MAX_MANA;
     public static final ForgeConfigSpec.ConfigValue<String> MANA_SPREADER_BURST_COLOR;
     public static final ForgeConfigSpec.ConfigValue<String> MANA_SPREADER_HUD_COLOR;
     public static final ForgeConfigSpec.ConfigValue<Integer> MANA_SPREADER_PRE_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> MANA_SPREADER_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> MANA_SPREADER_BURST_SPEED;
+    public static final ForgeConfigSpec.ConfigValue<Double> MANA_SPREADER_LOSS_TICK;
+    public static final ForgeConfigSpec.ConfigValue<Double> MANA_SPREADER_BURST_SPEED;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> REDSTONE_SPREADER_BURST_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> REDSTONE_SPREADER_MAX_MANA;
     public static final ForgeConfigSpec.ConfigValue<String> REDSTONE_SPREADER_BURST_COLOR;
     public static final ForgeConfigSpec.ConfigValue<String> REDSTONE_SPREADER_HUD_COLOR;
     public static final ForgeConfigSpec.ConfigValue<Integer> REDSTONE_SPREADER_PRE_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> REDSTONE_SPREADER_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> REDSTONE_SPREADER_BURST_SPEED;
+    public static final ForgeConfigSpec.ConfigValue<Double> REDSTONE_SPREADER_LOSS_TICK;
+    public static final ForgeConfigSpec.ConfigValue<Double> REDSTONE_SPREADER_BURST_SPEED;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ELVEN_SPREADER_BURST_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> ELVEN_SPREADER_MAX_MANA;
     public static final ForgeConfigSpec.ConfigValue<String> ELVEN_SPREADER_BURST_COLOR;
     public static final ForgeConfigSpec.ConfigValue<String> ELVEN_SPREADER_HUD_COLOR;
     public static final ForgeConfigSpec.ConfigValue<Integer> ELVEN_SPREADER_PRE_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> ELVEN_SPREADER_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> ELVEN_SPREADER_BURST_SPEED;
+    public static final ForgeConfigSpec.ConfigValue<Double> ELVEN_SPREADER_LOSS_TICK;
+    public static final ForgeConfigSpec.ConfigValue<Double> ELVEN_SPREADER_BURST_SPEED;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> GAIA_SPREADER_BURST_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> GAIA_SPREADER_MAX_MANA;
     public static final ForgeConfigSpec.ConfigValue<String> GAIA_SPREADER_BURST_COLOR;
     public static final ForgeConfigSpec.ConfigValue<String> GAIA_SPREADER_HUD_COLOR;
     public static final ForgeConfigSpec.ConfigValue<Integer> GAIA_SPREADER_PRE_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> GAIA_SPREADER_LOSS_TICK;
-    public static final ForgeConfigSpec.ConfigValue<Float> GAIA_SPREADER_BURST_SPEED;
+    public static final ForgeConfigSpec.ConfigValue<Double> GAIA_SPREADER_LOSS_TICK;
+    public static final ForgeConfigSpec.ConfigValue<Double> GAIA_SPREADER_BURST_SPEED;
 
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDOFLAME_PROD;
@@ -62,20 +59,6 @@ public class CommonConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> ORECHID_IGNEM_COST;
 
     static {
-        BUILDER.push("Jade Config");
-
-        SHOULD_SHOW_MANA_TOOLTIP =
-            BUILDER.comment("Should jade show botania information?")
-                .define("Should show mana tooltip", true);
-
-        SHOULD_SHOW_ADVANCED_TOOLTIP =
-            BUILDER.comment("Should jade show advanced configs?")
-                .comment("For example how much mana does a spreader pass each burst")
-                .comment("This config is useless if [Should Show Mana Tooltip] is false")
-                .define("Should show advanced tooltip", true);
-
-        BUILDER.pop();
-
         BUILDER.push("Endoflame Config");
 
         ENDOFLAME_PROD =
@@ -210,12 +193,12 @@ public class CommonConfig {
         MANA_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0f);
+                .define("Loss tick", 4.0d);
         MANA_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.0f);
+                .define("Burst speed", 1.0d);
         BUILDER.pop();
 
         BUILDER.push("Redstone Mana Spreader Config");
@@ -247,12 +230,12 @@ public class CommonConfig {
         REDSTONE_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0f);
+                .define("Loss tick", 4.0d);
         REDSTONE_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.0f);
+                .define("Burst speed", 1.0d);
         BUILDER.pop();
 
         BUILDER.push("Elven Mana Spreader Config");
@@ -284,12 +267,12 @@ public class CommonConfig {
         ELVEN_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0f);
+                .define("Loss tick", 4.0d);
         ELVEN_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.25f);
+                .define("Burst speed", 1.25d);
         BUILDER.pop();
 
         BUILDER.push("Gaia Mana Spreader Config");
@@ -321,12 +304,12 @@ public class CommonConfig {
         GAIA_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
                 .comment("Default [20.0]")
-                .define("Loss tick", 20.0f);
+                .define("Loss tick", 20.0d);
         GAIA_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 2.0f);
+                .define("Burst speed", 2.0d);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
