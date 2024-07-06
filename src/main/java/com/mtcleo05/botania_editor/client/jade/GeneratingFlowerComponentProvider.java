@@ -9,7 +9,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ForgeConfigSpec;
 import snownee.jade.api.BlockAccessor;
 import snownee.jade.api.IBlockComponentProvider;
 import snownee.jade.api.ITooltip;
@@ -28,7 +27,6 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
     private static final ResourceLocation UID = new ResourceLocation(BotaniaEditor.MODID, "botania_flower");
 
     public void appendTooltip(ITooltip iTooltip, BlockAccessor blockAccessor, IPluginConfig iPluginConfig) {
-
         try{
             GeneratingFlowerBlockEntity generatingFlowerEntity = (GeneratingFlowerBlockEntity) blockAccessor.getBlockEntity();
 
@@ -41,18 +39,8 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
 
                 if(ClientConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
                     if(JadeUtils.JADE_FLOWER_MAP.containsKey(generatingFlowerEntity.getClass())){
-
-                        List<ForgeConfigSpec.ConfigValue<?>> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());
-
-                        for (int i = 0; i < configs.size(); i++) {
-                            if(i == 0){
-                                iTooltip.add(Component.translatable("botania_editor.prod", configs.get(i).get()));
-                            }
-
-                            if(i == 1){
-                                iTooltip.add(Component.translatable("botania_editor.decay", configs.get(i).get()));
-                            }
-                        }
+                        List<Component> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());
+                        configs.forEach(iTooltip::add);
                     }
                 }
             }

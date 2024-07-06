@@ -1,12 +1,11 @@
 package com.mtcleo05.botania_editor.utils;
 
-import com.mtcleo05.botania_editor.config.ClientConfig;
 import com.mtcleo05.botania_editor.config.ServerConfig;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.minecraft.network.chat.Component;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
 import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
+import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
 import vazkii.botania.common.block.flower.generating.ThermalilyBlockEntity;
 
 import java.util.HashMap;
@@ -15,28 +14,36 @@ import java.util.Map;
 
 public class JadeUtils {
 
-    public static final Map<Class<? extends GeneratingFlowerBlockEntity>, List<ForgeConfigSpec.ConfigValue<?>>> JADE_FLOWER_MAP = new HashMap<>();
+    public static final Map<Class<? extends GeneratingFlowerBlockEntity>, List<Component>> JADE_FLOWER_MAP = new HashMap<>();
 
     static {
         JADE_FLOWER_MAP.put(
             EndoflameBlockEntity.class,
             List.of(
-                ServerConfig.ENDOFLAME_PROD
+                Component.translatable("botania_editor.prod", ServerConfig.ENDOFLAME_PROD.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             HydroangeasBlockEntity.class,
             List.of(
-                ServerConfig.HYDROANGEAS_PROD,
-                ServerConfig.HYDROANGEAS_TICK
+                Component.translatable("botania_editor.prod", ServerConfig.HYDROANGEAS_PROD.get()),
+                Component.translatable("botania_editor.decay", ServerConfig.HYDROANGEAS_TICK.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             ThermalilyBlockEntity.class,
             List.of(
-                ServerConfig.THERMALILY_PROD
+                Component.translatable("botania_editor.prod", ServerConfig.THERMALILY_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            RosaArcanaBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodOrb", ServerConfig.ROSA_ARCANA_ORB_PROD.get()),
+                Component.translatable("botania_editor.prodExp", ServerConfig.ROSA_ARCANA_PROD.get())
             )
         );
     }

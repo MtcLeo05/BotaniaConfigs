@@ -44,6 +44,10 @@ public class ServerConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> HYDROANGEAS_PROD;
     public static final ForgeConfigSpec.ConfigValue<Integer> THERMALILY_PROD;
 
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> ROSA_ARCANA_ORB_PROD;
+    public static final ForgeConfigSpec.ConfigValue<Integer> ROSA_ARCANA_PROD;
+
     public static final ForgeConfigSpec.ConfigValue<Integer> BLACK_LOTUS_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> BLACKER_LOTUS_MANA;
 
@@ -85,6 +89,20 @@ public class ServerConfig {
             BUILDER.comment("Thermalily production")
                 .comment("How much mana should it produce each tick [20]")
                 .defineInRange("Thermalily Production", 20, 1, 100);
+
+        BUILDER.pop();
+
+        BUILDER.push("Rosa Arcana Config");
+
+        ROSA_ARCANA_PROD =
+            BUILDER.comment("Production of rosa arcana (player exp)")
+                .comment("This is mana for each player exp point [50]")
+                .defineInRange("Rosa Arcana Production", 50, 1, 100);
+
+        ROSA_ARCANA_ORB_PROD =
+            BUILDER.comment("Production of rosa arcana (exp orb)")
+                .comment("This is mana for each orb exp point [50]")
+                .defineInRange("Rosa Arcana Orb Production", 50, 1, 100);
 
         BUILDER.pop();
 
@@ -191,7 +209,7 @@ public class ServerConfig {
                 .comment("Default [60]")
                 .define("Pre loss tick", 60);
         MANA_SPREADER_LOSS_TICK =
-            BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
+            BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
                 .define("Loss tick", 4.0d);
         MANA_SPREADER_BURST_SPEED =
@@ -228,7 +246,7 @@ public class ServerConfig {
                 .comment("Default [60]")
                 .define("Pre loss tick", 60);
         REDSTONE_SPREADER_LOSS_TICK =
-            BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
+            BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
                 .define("Loss tick", 4.0d);
         REDSTONE_SPREADER_BURST_SPEED =
@@ -265,7 +283,7 @@ public class ServerConfig {
                 .comment("Default [80]")
                 .define("Pre loss tick", 80);
         ELVEN_SPREADER_LOSS_TICK =
-            BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
+            BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
                 .define("Loss tick", 4.0d);
         ELVEN_SPREADER_BURST_SPEED =
@@ -302,7 +320,7 @@ public class ServerConfig {
                 .comment("Default [120]")
                 .define("Pre loss tick", 120);
         GAIA_SPREADER_LOSS_TICK =
-            BUILDER.comment("How much mana should be loss each tick after the PreLossTick expires")
+            BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [20.0]")
                 .define("Loss tick", 20.0d);
         GAIA_SPREADER_BURST_SPEED =

@@ -9,5 +9,7 @@
   "botania_editor.orechid_stats": "Cost each block: %d / Delay each block: %d",
   "botania_editor.orechid_range": "Horizontal Range: %d, Vertical Range %d",
   "botania_editor.prod": "Production / Tick: %d",
-  "botania_editor.decay": "Decay: %d ticks"
+  "botania_editor.decay": "Decay: %d ticks",
+  "botania_editor.prodOrb": "Production / Orb Exp: %d",
+  "botania_editor.prodExp": "Production / Player Exp: %d"
 }
