@@ -125,7 +125,7 @@ public class ServerConfig {
         ORECHID_COST =
             BUILDER.comment("Cost of orechid each block")
                 .comment("How much mana should orechid consume each block [17500]")
-                .defineInRange("Orechid cost", 5, 1, 100000000);
+                .defineInRange("Orechid cost", 17500, 1, 100000000);
 
         ORECHID_IGNEM_COST =
             BUILDER.comment("Cost of orechid ignem each block")
@@ -142,7 +142,7 @@ public class ServerConfig {
             BUILDER.comment("Ticks between a block conversion and the other")
                 .comment("How much time should the orechid wait before attempting to convert another block [100]")
                 .comment("This affects both orechid and orechid ignem")
-                .defineInRange("Orechid delay", 2, 1, 100000000);
+                .defineInRange("Orechid delay", 100, 1, 100000000);
 
         ORECHID_DELAY_GOG =
             BUILDER.comment("Ticks between a block conversion and the other in garden of glass")
@@ -327,7 +327,7 @@ public class ServerConfig {
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 2.0d);
+                .define("Burst speed", 1.0d);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
