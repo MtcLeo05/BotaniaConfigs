@@ -10,6 +10,7 @@
         "HydroangeasMixin",
         "LotusMixin",
         "ManaPoolMixin",
+        "MunchdewMixin",
         "OrechidIgnemMixin",
         "OrechidMixin",
         "RosaArcanaMixin"

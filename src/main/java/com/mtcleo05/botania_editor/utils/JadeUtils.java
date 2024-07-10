@@ -3,10 +3,7 @@ package com.mtcleo05.botania_editor.utils;
 import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.network.chat.Component;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
-import vazkii.botania.common.block.flower.generating.EndoflameBlockEntity;
-import vazkii.botania.common.block.flower.generating.HydroangeasBlockEntity;
-import vazkii.botania.common.block.flower.generating.RosaArcanaBlockEntity;
-import vazkii.botania.common.block.flower.generating.ThermalilyBlockEntity;
+import vazkii.botania.common.block.flower.generating.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -44,6 +41,14 @@ public class JadeUtils {
             List.of(
                 Component.translatable("botania_editor.prodOrb", ServerConfig.ROSA_ARCANA_ORB_PROD.get()),
                 Component.translatable("botania_editor.prodExp", ServerConfig.ROSA_ARCANA_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            MunchdewBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prod", ServerConfig.MUNCHDEW_MANA.get()),
+                Component.translatable("botania_editor.orechid_range", ServerConfig.MUNCHDEW_RANGE.get(), ServerConfig.MUNCHDEW_RANGE_Y.get())
             )
         );
     }

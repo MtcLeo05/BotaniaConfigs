@@ -40,13 +40,19 @@ public class ServerConfig {
 
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ENDOFLAME_PROD;
+
     public static final ForgeConfigSpec.ConfigValue<Integer> HYDROANGEAS_TICK;
     public static final ForgeConfigSpec.ConfigValue<Integer> HYDROANGEAS_PROD;
-    public static final ForgeConfigSpec.ConfigValue<Integer> THERMALILY_PROD;
 
+    public static final ForgeConfigSpec.ConfigValue<Integer> THERMALILY_PROD;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> ROSA_ARCANA_ORB_PROD;
     public static final ForgeConfigSpec.ConfigValue<Integer> ROSA_ARCANA_PROD;
+
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> MUNCHDEW_MANA;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MUNCHDEW_RANGE;
+    public static final ForgeConfigSpec.ConfigValue<Integer> MUNCHDEW_RANGE_Y;
 
     public static final ForgeConfigSpec.ConfigValue<Integer> BLACK_LOTUS_MANA;
     public static final ForgeConfigSpec.ConfigValue<Integer> BLACKER_LOTUS_MANA;
@@ -103,6 +109,25 @@ public class ServerConfig {
             BUILDER.comment("Production of rosa arcana (exp orb)")
                 .comment("This is mana for each orb exp point [50]")
                 .defineInRange("Rosa Arcana Orb Production", 50, 1, Integer.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Munchdew Config");
+
+        MUNCHDEW_MANA =
+            BUILDER.comment("Production of munchdew (per leaf)")
+                .comment("This is mana for each eaten leaf [160]")
+                .defineInRange("Munchdew Production", 160, 1, Integer.MAX_VALUE);
+
+        MUNCHDEW_RANGE =
+            BUILDER.comment("Range of munchdew (horizontal)")
+                .comment("The horizontal range of munchdew [8]")
+                .defineInRange("Munchdew Range", 8, 1, Integer.MAX_VALUE);
+
+        MUNCHDEW_RANGE_Y =
+            BUILDER.comment("Range of munchdew (vertical)")
+                .comment("The vertical range of munchdew [16]")
+                .defineInRange("Munchdew Range Y", 16, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
 

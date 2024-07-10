@@ -1,6 +1,5 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.ClientConfig;
 import com.mtcleo05.botania_editor.config.ServerConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -21,7 +20,7 @@ public class OrechidMixin {
 
     /**
      * @author MtcLeo05
-     * @reason Configurable cost
+     * @reason Configurable delay
      */
     @Overwrite(remap = false)
     public int getDelay(){
@@ -30,7 +29,7 @@ public class OrechidMixin {
 
     /**
      * @author MtcLeo05
-     * @reason Configurable cost
+     * @reason Configurable range
      */
     @Overwrite(remap = false)
     public int getRange() {
@@ -39,7 +38,7 @@ public class OrechidMixin {
 
     /**
      * @author MtcLeo05
-     * @reason Configurable cost
+     * @reason Configurable vertical range
      */
     @Overwrite(remap = false)
     public int getRangeY() {
