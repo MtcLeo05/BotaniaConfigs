@@ -68,7 +68,7 @@ public class ServerConfig {
         ENDOFLAME_PROD =
             BUILDER.comment("Production of endoflame")
                 .comment("This is mana each tick, to know how much mana/sec multiply by 20 [3]")
-                .defineInRange("Endoflame Production", 3, 1, 100);
+                .defineInRange("Endoflame Production", 3, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
 
@@ -83,12 +83,12 @@ public class ServerConfig {
         HYDROANGEAS_PROD =
             BUILDER.comment("Hydroangeas production")
                 .comment("How much mana should it produce each tick [1]")
-                .defineInRange("Hydroangeas Production", 1, 1, 100);
+                .defineInRange("Hydroangeas Production", 1, 1, Integer.MAX_VALUE);
 
         THERMALILY_PROD =
             BUILDER.comment("Thermalily production")
                 .comment("How much mana should it produce each tick [20]")
-                .defineInRange("Thermalily Production", 20, 1, 100);
+                .defineInRange("Thermalily Production", 20, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
 
@@ -97,12 +97,12 @@ public class ServerConfig {
         ROSA_ARCANA_PROD =
             BUILDER.comment("Production of rosa arcana (player exp)")
                 .comment("This is mana for each player exp point [50]")
-                .defineInRange("Rosa Arcana Production", 50, 1, 100);
+                .defineInRange("Rosa Arcana Production", 50, 1, Integer.MAX_VALUE);
 
         ROSA_ARCANA_ORB_PROD =
             BUILDER.comment("Production of rosa arcana (exp orb)")
                 .comment("This is mana for each orb exp point [50]")
-                .defineInRange("Rosa Arcana Orb Production", 50, 1, 100);
+                .defineInRange("Rosa Arcana Orb Production", 50, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
 
@@ -125,44 +125,44 @@ public class ServerConfig {
         ORECHID_COST =
             BUILDER.comment("Cost of orechid each block")
                 .comment("How much mana should orechid consume each block [17500]")
-                .defineInRange("Orechid cost", 17500, 1, 100000000);
+                .defineInRange("Orechid cost", 17500, 1, Integer.MAX_VALUE);
 
         ORECHID_IGNEM_COST =
             BUILDER.comment("Cost of orechid ignem each block")
                 .comment("How much mana should orechid ignem consume each block [20000]")
-                .defineInRange("Orechid ignem Cost", 20000, 1, 100000000);
+                .defineInRange("Orechid ignem Cost", 20000, 1, Integer.MAX_VALUE);
 
         ORECHID_COST_GOG =
             BUILDER.comment("Cost of orechid each block in garden of glass")
                 .comment("How much mana should orechid consume each block, when in a garden of glass word [700]")
                 .comment("Usually this cost is lower than the normal, but it's not a rule")
-                .defineInRange("Orechid cost GOG", 700, 1, 100000000);
+                .defineInRange("Orechid cost GOG", 700, 1, Integer.MAX_VALUE);
 
         ORECHID_DELAY =
             BUILDER.comment("Ticks between a block conversion and the other")
                 .comment("How much time should the orechid wait before attempting to convert another block [100]")
                 .comment("This affects both orechid and orechid ignem")
-                .defineInRange("Orechid delay", 100, 1, 100000000);
+                .defineInRange("Orechid delay", 100, 1, Integer.MAX_VALUE);
 
         ORECHID_DELAY_GOG =
             BUILDER.comment("Ticks between a block conversion and the other in garden of glass")
                 .comment("How much time should the orechid wait before attempting to convert another block, when in a garden of glass word [2]")
                 .comment("Usually this delay is lower than the normal, but it's not a rule")
-                .defineInRange("Orechid delay GOG", 2, 1, 100000000);
+                .defineInRange("Orechid delay GOG", 2, 1, Integer.MAX_VALUE);
 
         ORECHID_RANGE =
             BUILDER.comment("Horizontal range of orechid")
                 .comment("The range of the square where the orechid checks if there are convertible blocks [5]")
                 .comment("Increasing this too much could cause lag since a lot of blocks are being checked")
                 .comment("This affects both orechid and orechid ignem")
-                .defineInRange("Orechid range", 5, 1, 100);
+                .defineInRange("Orechid range", 5, 1, Integer.MAX_VALUE);
 
         ORECHID_RANGE_Y =
             BUILDER.comment("Vertical range of orechid")
                 .comment("The height of the cube where the orechid checks if there are convertible blocks [3]")
                 .comment("Increasing this too much could cause lag since a lot of blocks are being checked")
                 .comment("This affects both orechid and orechid ignem")
-                .defineInRange("Orechid range Y", 3, 1, 100);
+                .defineInRange("Orechid range Y", 3, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
 
@@ -172,13 +172,13 @@ public class ServerConfig {
             BUILDER.comment("Mana pool mana")
                 .comment("How much mana can a mana pool contain [1000000]")
                 .comment("This only affects mana pools placed after the configs is changed!")
-                .define("Mana Pool Max Mana", 1000000);
+                .defineInRange("Mana Pool Max Mana", 1000000, 0, Integer.MAX_VALUE);
 
         DILUTED_MANA_POOL_MAX_MANA =
             BUILDER.comment("Diluted mana pool mana")
                 .comment("How much mana can a diluted mana pool contain [10000]")
                 .comment("This only affects mana pools placed after the configs is changed!")
-                .define("Diluted Mana Pool Max Mana", 10000);
+                .defineInRange("Diluted Mana Pool Max Mana", 10000, 0, Integer.MAX_VALUE);
 
         BUILDER.pop();
 
@@ -187,11 +187,11 @@ public class ServerConfig {
         MANA_SPREADER_BURST_MANA =
             BUILDER.comment("How much mana should the spreader pass each burst")
                 .comment("Default [160]")
-                .define("Mana each burst", 160);
+                .defineInRange("Mana each burst", 160, 0, Integer.MAX_VALUE);
         MANA_SPREADER_MAX_MANA =
             BUILDER.comment("How much mana can the spreader contain")
                 .comment("Default [1000]")
-                .define("Max mana", 1000);
+                .defineInRange("Max mana", 1000, 0, Integer.MAX_VALUE);
         MANA_SPREADER_BURST_COLOR =
             BUILDER.comment("The hexadecimal color of the mana burst")
                 .comment("Putting an invalid color can, and will, break stuff :)")
@@ -207,16 +207,16 @@ public class ServerConfig {
             BUILDER.comment("How much tick should pass before the burst starts losing mana")
                 .comment("As always 20 ticks => 1 second")
                 .comment("Default [60]")
-                .define("Pre loss tick", 60);
+                .defineInRange("Pre loss tick", 60, 0, Integer.MAX_VALUE);
         MANA_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0d);
+                .defineInRange("Loss tick", 4.0d, 0, Double.MAX_VALUE);
         MANA_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.0d);
+                .defineInRange("Burst speed", 1.0d, 0, Double.MAX_VALUE);
         BUILDER.pop();
 
         BUILDER.push("Redstone Mana Spreader Config");
@@ -224,11 +224,11 @@ public class ServerConfig {
         REDSTONE_SPREADER_BURST_MANA =
             BUILDER.comment("How much mana should the spreader pass each burst")
                 .comment("Default [160]")
-                .define("Mana each burst", 160);
+                .defineInRange("Mana each burst", 160, 0, Integer.MAX_VALUE);
         REDSTONE_SPREADER_MAX_MANA =
             BUILDER.comment("How much mana can the spreader contain")
                 .comment("Default [1000]")
-                .define("Max mana", 1000);
+                .defineInRange("Max mana", 1000, 0, Integer.MAX_VALUE);
         REDSTONE_SPREADER_BURST_COLOR =
             BUILDER.comment("The hexadecimal color of the mana burst")
                 .comment("Putting an invalid color can, and will, break stuff :)")
@@ -244,16 +244,16 @@ public class ServerConfig {
             BUILDER.comment("How much tick should pass before the burst starts losing mana")
                 .comment("As always 20 ticks => 1 second")
                 .comment("Default [60]")
-                .define("Pre loss tick", 60);
+                .defineInRange("Pre loss tick", 60, 0, Integer.MAX_VALUE);
         REDSTONE_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0d);
+                .defineInRange("Loss tick", 4.0d, 0, Double.MAX_VALUE);
         REDSTONE_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.0d);
+                .defineInRange("Burst speed", 1.0d, 0, Double.MAX_VALUE);
         BUILDER.pop();
 
         BUILDER.push("Elven Mana Spreader Config");
@@ -261,11 +261,11 @@ public class ServerConfig {
         ELVEN_SPREADER_BURST_MANA =
             BUILDER.comment("How much mana should the spreader pass each burst")
                 .comment("Default [240]")
-                .define("Mana each burst", 240);
+                .defineInRange("Mana each burst", 240, 0, Integer.MAX_VALUE);
         ELVEN_SPREADER_MAX_MANA =
             BUILDER.comment("How much mana can the spreader contain")
                 .comment("Default [1000]")
-                .define("Max mana", 1000);
+                .defineInRange("Max mana", 1000, 0, Integer.MAX_VALUE);
         ELVEN_SPREADER_BURST_COLOR =
             BUILDER.comment("The hexadecimal color of the mana burst")
                 .comment("Putting an invalid color can, and will, break stuff :)")
@@ -281,16 +281,16 @@ public class ServerConfig {
             BUILDER.comment("How much tick should pass before the burst starts losing mana")
                 .comment("As always 20 ticks => 1 second")
                 .comment("Default [80]")
-                .define("Pre loss tick", 80);
+                .defineInRange("Pre loss tick", 80, 0, Integer.MAX_VALUE);
         ELVEN_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [4.0]")
-                .define("Loss tick", 4.0d);
+                .defineInRange("Loss tick", 4.0d, 0, Double.MAX_VALUE);
         ELVEN_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.25d);
+                .defineInRange("Burst speed", 1.25d, 0, Double.MAX_VALUE);
         BUILDER.pop();
 
         BUILDER.push("Gaia Mana Spreader Config");
@@ -298,11 +298,11 @@ public class ServerConfig {
         GAIA_SPREADER_BURST_MANA =
             BUILDER.comment("How much mana should the spreader pass each burst")
                 .comment("Default [640]")
-                .define("Mana each burst", 640);
+                .defineInRange("Mana each burst", 640, 0, Integer.MAX_VALUE);
         GAIA_SPREADER_MAX_MANA =
             BUILDER.comment("How much mana can the spreader contain")
                 .comment("Default [6400]")
-                .define("Max mana", 6400);
+                .defineInRange("Max mana", 6400, 0, Integer.MAX_VALUE);
         GAIA_SPREADER_BURST_COLOR =
             BUILDER.comment("The hexadecimal color of the mana burst")
                 .comment("Putting an invalid color can, and will, break stuff :)")
@@ -318,16 +318,16 @@ public class ServerConfig {
             BUILDER.comment("How much tick should pass before the burst starts losing mana")
                 .comment("As always 20 ticks => 1 second")
                 .comment("Default [120]")
-                .define("Pre loss tick", 120);
+                .defineInRange("Pre loss tick", 120, 0, Integer.MAX_VALUE);
         GAIA_SPREADER_LOSS_TICK =
             BUILDER.comment("How much mana should be lost each tick after the PreLossTick expires")
                 .comment("Default [20.0]")
-                .define("Loss tick", 20.0d);
+                .defineInRange("Loss tick", 20.0d, 0, Double.MAX_VALUE);
         GAIA_SPREADER_BURST_SPEED =
             BUILDER.comment("The speed of the mana burst")
                 .comment("Values to high can break stuff")
                 .comment("Default [1.0]")
-                .define("Burst speed", 1.0d);
+                .defineInRange("Burst speed", 1.0d, 0, Double.MAX_VALUE);
 
         BUILDER.pop();
         SPEC = BUILDER.build();
