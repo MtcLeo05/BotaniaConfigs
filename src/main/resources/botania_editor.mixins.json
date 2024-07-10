@@ -3,7 +3,7 @@
     "minVersion": "0.8",
     "package": "com.mtcleo05.botania_editor.mixin",
     "compatibilityLevel": "JAVA_8",
-    "refmap": "BotaniaEditor.refmap.json",
+    "refmap": "botania_editor.refmap.json",
     "mixins": [
         "EndoflameMixin",
         "FluidGeneratorMixin",
