@@ -16,7 +16,7 @@ public class MunchdewMixin {
         return ServerConfig.MUNCHDEW_MANA.get();
     }
 
-    @Redirect(remap = false, method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;betweenClosed(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Ljava/lang/Iterable;"))
+    @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;betweenClosed(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Ljava/lang/Iterable;"))
     public Iterable<BlockPos> changeRange(BlockPos pFirstPos, BlockPos pSecondPos){
         return BlockPos.betweenClosed(
             new BlockPos(
