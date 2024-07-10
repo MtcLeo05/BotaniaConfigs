@@ -1,7 +1,6 @@
 package com.mtcleo05.botania_editor.client.wthit;
 
 import com.mtcleo05.botania_editor.config.ClientConfig;
-import com.mtcleo05.botania_editor.config.ServerConfig;
 import com.mtcleo05.botania_editor.utils.JadeUtils;
 import mcp.mobius.waila.api.IBlockAccessor;
 import mcp.mobius.waila.api.IBlockComponentProvider;
@@ -10,7 +9,6 @@ import mcp.mobius.waila.api.ITooltip;
 import net.minecraft.network.chat.Component;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.common.ForgeConfigSpec;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 
 import java.util.List;
@@ -30,18 +28,8 @@ public enum GeneratingFlowerComponentProvider implements IBlockComponentProvider
 
                 if(ClientConfig.SHOULD_SHOW_ADVANCED_TOOLTIP.get()){
                     if(JadeUtils.JADE_FLOWER_MAP.containsKey(generatingFlowerEntity.getClass())){
-
-                        List<ForgeConfigSpec.ConfigValue<?>> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());
-
-                        for (int i = 0; i < configs.size(); i++) {
-                            if(i == 0){
-                                iTooltip.addLine(Component.translatable("botania_editor.prod", configs.get(i).get()));
-                            }
-
-                            if(i == 1){
-                                iTooltip.addLine(Component.translatable("botania_editor.decay", configs.get(i).get()));
-                            }
-                        }
+                        List<Component> configs = JadeUtils.JADE_FLOWER_MAP.get(generatingFlowerEntity.getClass());
+                        configs.forEach(iTooltip::addLine);
                     }
                 }
             }
