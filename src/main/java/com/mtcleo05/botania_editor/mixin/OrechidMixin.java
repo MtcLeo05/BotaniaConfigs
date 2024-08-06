@@ -10,7 +10,7 @@ import vazkii.botania.xplat.XplatAbstractions;
 public class OrechidMixin {
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable cost
      */
     @Overwrite(remap = false)
@@ -19,7 +19,7 @@ public class OrechidMixin {
     }
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable delay
      */
     @Overwrite(remap = false)
@@ -28,7 +28,7 @@ public class OrechidMixin {
     }
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable range
      */
     @Overwrite(remap = false)
@@ -37,7 +37,7 @@ public class OrechidMixin {
     }
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable vertical range
      */
     @Overwrite(remap = false)

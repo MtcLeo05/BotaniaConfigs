@@ -32,7 +32,7 @@ public class ManaPoolMixin extends BotaniaBlockEntity {
 
     //TODO: Make this without overwrite
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Change mana pool mana
      */
     @Overwrite(remap = false)

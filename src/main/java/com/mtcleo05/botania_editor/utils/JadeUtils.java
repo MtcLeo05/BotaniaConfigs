@@ -1,7 +1,6 @@
 package com.mtcleo05.botania_editor.utils;
 
 import com.mtcleo05.botania_editor.config.server.GeneratingFloraConfig;
-import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import net.minecraft.network.chat.Component;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.block.flower.generating.*;
@@ -50,6 +49,20 @@ public class JadeUtils {
             List.of(
                 Component.translatable("botania_editor.prod", GeneratingFloraConfig.MUNCHDEW_MANA.get()),
                 Component.translatable("botania_editor.orechid_range", GeneratingFloraConfig.MUNCHDEW_RANGE.get(), GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            EntropinnyumBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodExplosion", GeneratingFloraConfig.ENTROPINNYUM_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            KekimurusBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodSlice", GeneratingFloraConfig.KEKIMURUS_PROD.get())
             )
         );
     }
