@@ -1,7 +1,7 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.ClientConfig;
-import com.mtcleo05.botania_editor.config.ServerConfig;
+import com.mtcleo05.botania_editor.config.server.GeneratingFloraConfig;
+import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.ModifyArg;
@@ -12,7 +12,7 @@ public class EndoflameMixin{
 
     @ModifyArg(remap = false, method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/generating/EndoflameBlockEntity;addMana(I)V"))
     public int changeManaTick(int mana){
-        return ServerConfig.ENDOFLAME_PROD.get();
+        return GeneratingFloraConfig.ENDOFLAME_PROD.get();
     }
 
 }

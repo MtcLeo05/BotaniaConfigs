@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.ServerConfig;
+import com.mtcleo05.botania_editor.config.server.GeneratingFloraConfig;
+import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import net.minecraft.core.BlockPos;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -13,21 +14,21 @@ public class MunchdewMixin {
 
     @ModifyArg(remap = false, method = "tickFlower", at = @At(value = "INVOKE", target = "Lvazkii/botania/common/block/flower/generating/MunchdewBlockEntity;addMana(I)V"))
     public int changeManaLeaf(int par1){
-        return ServerConfig.MUNCHDEW_MANA.get();
+        return GeneratingFloraConfig.MUNCHDEW_MANA.get();
     }
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;betweenClosed(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Ljava/lang/Iterable;"))
     public Iterable<BlockPos> changeRange(BlockPos pFirstPos, BlockPos pSecondPos){
         return BlockPos.betweenClosed(
             new BlockPos(
-                -ServerConfig.MUNCHDEW_RANGE.get(),
-                0,
-                -ServerConfig.MUNCHDEW_RANGE.get()
+                -GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
+                -GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
+                -GeneratingFloraConfig.MUNCHDEW_RANGE.get()
             ),
             new BlockPos(
-                ServerConfig.MUNCHDEW_RANGE.get(),
-                ServerConfig.MUNCHDEW_RANGE_Y.get(),
-                ServerConfig.MUNCHDEW_RANGE.get()
+                GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
+                GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
+                GeneratingFloraConfig.MUNCHDEW_RANGE.get()
             )
         );
     }

@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.utils;
 
-import com.mtcleo05.botania_editor.config.ServerConfig;
+import com.mtcleo05.botania_editor.config.server.GeneratingFloraConfig;
+import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import net.minecraft.network.chat.Component;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.block.flower.generating.*;
@@ -17,38 +18,38 @@ public class JadeUtils {
         JADE_FLOWER_MAP.put(
             EndoflameBlockEntity.class,
             List.of(
-                Component.translatable("botania_editor.prod", ServerConfig.ENDOFLAME_PROD.get())
+                Component.translatable("botania_editor.prod", GeneratingFloraConfig.ENDOFLAME_PROD.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             HydroangeasBlockEntity.class,
             List.of(
-                Component.translatable("botania_editor.prod", ServerConfig.HYDROANGEAS_PROD.get()),
-                Component.translatable("botania_editor.decay", ServerConfig.HYDROANGEAS_TICK.get())
+                Component.translatable("botania_editor.prod", GeneratingFloraConfig.HYDROANGEAS_PROD.get()),
+                Component.translatable("botania_editor.decay", GeneratingFloraConfig.HYDROANGEAS_TICK.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             ThermalilyBlockEntity.class,
             List.of(
-                Component.translatable("botania_editor.prod", ServerConfig.THERMALILY_PROD.get())
+                Component.translatable("botania_editor.prod", GeneratingFloraConfig.THERMALILY_PROD.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             RosaArcanaBlockEntity.class,
             List.of(
-                Component.translatable("botania_editor.prodOrb", ServerConfig.ROSA_ARCANA_ORB_PROD.get()),
-                Component.translatable("botania_editor.prodExp", ServerConfig.ROSA_ARCANA_PROD.get())
+                Component.translatable("botania_editor.prodOrb", GeneratingFloraConfig.ROSA_ARCANA_ORB_PROD.get()),
+                Component.translatable("botania_editor.prodExp", GeneratingFloraConfig.ROSA_ARCANA_PROD.get())
             )
         );
 
         JADE_FLOWER_MAP.put(
             MunchdewBlockEntity.class,
             List.of(
-                Component.translatable("botania_editor.prod", ServerConfig.MUNCHDEW_MANA.get()),
-                Component.translatable("botania_editor.orechid_range", ServerConfig.MUNCHDEW_RANGE.get(), ServerConfig.MUNCHDEW_RANGE_Y.get())
+                Component.translatable("botania_editor.prod", GeneratingFloraConfig.MUNCHDEW_MANA.get()),
+                Component.translatable("botania_editor.orechid_range", GeneratingFloraConfig.MUNCHDEW_RANGE.get(), GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get())
             )
         );
     }

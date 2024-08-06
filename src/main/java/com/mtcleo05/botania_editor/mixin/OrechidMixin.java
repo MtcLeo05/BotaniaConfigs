@@ -1,6 +1,7 @@
 package com.mtcleo05.botania_editor.mixin;
 
-import com.mtcleo05.botania_editor.config.ServerConfig;
+import com.mtcleo05.botania_editor.config.server.FunctioningFloraConfig;
+import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import vazkii.botania.common.block.flower.functional.OrechidBlockEntity;
@@ -15,7 +16,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getCost(){
-        return XplatAbstractions.INSTANCE.gogLoaded() ? ServerConfig.ORECHID_COST_GOG.get() : ServerConfig.ORECHID_COST.get();
+        return XplatAbstractions.INSTANCE.gogLoaded() ? FunctioningFloraConfig.ORECHID_COST_GOG.get() : FunctioningFloraConfig.ORECHID_COST.get();
     }
 
     /**
@@ -24,7 +25,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getDelay(){
-        return XplatAbstractions.INSTANCE.gogLoaded() ? ServerConfig.ORECHID_DELAY_GOG.get() : ServerConfig.ORECHID_DELAY.get();
+        return XplatAbstractions.INSTANCE.gogLoaded() ? FunctioningFloraConfig.ORECHID_DELAY_GOG.get() : FunctioningFloraConfig.ORECHID_DELAY.get();
     }
 
     /**
@@ -33,7 +34,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getRange() {
-        return ServerConfig.ORECHID_RANGE.get();
+        return FunctioningFloraConfig.ORECHID_RANGE.get();
     }
 
     /**
@@ -42,7 +43,7 @@ public class OrechidMixin {
      */
     @Overwrite(remap = false)
     public int getRangeY() {
-        return ServerConfig.ORECHID_RANGE_Y.get();
+        return FunctioningFloraConfig.ORECHID_RANGE_Y.get();
     }
 
 }
