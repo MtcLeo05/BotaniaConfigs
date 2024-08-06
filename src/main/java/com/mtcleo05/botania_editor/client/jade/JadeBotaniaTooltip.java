@@ -1,7 +1,6 @@
 package com.mtcleo05.botania_editor.client.jade;
 
 import com.mtcleo05.botania_editor.config.ClientConfig;
-import com.mtcleo05.botania_editor.config.ServerConfig;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

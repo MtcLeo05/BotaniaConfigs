@@ -1,7 +1,6 @@
 package com.mtcleo05.botania_editor.client.wthit;
 
 import com.mtcleo05.botania_editor.config.ClientConfig;
-import com.mtcleo05.botania_editor.config.ServerConfig;
 import mcp.mobius.waila.api.IRegistrar;
 import mcp.mobius.waila.api.IWailaPlugin;
 import mcp.mobius.waila.api.TooltipPosition;
