@@ -24,7 +24,7 @@ public class HydroangeasMixin extends FluidGeneratorBlockEntity {
     }
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable decay
      */
     @Overwrite(remap = false)

@@ -21,6 +21,10 @@ public class GeneratingFloraConfig {
     public static final ForgeConfigSpec.ConfigValue<Integer> MUNCHDEW_RANGE;
     public static final ForgeConfigSpec.ConfigValue<Integer> MUNCHDEW_RANGE_Y;
 
+    public static final ForgeConfigSpec.ConfigValue<Integer> ENTROPINNYUM_PROD;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> KEKIMURUS_PROD;
+
     static {
         BUILDER.push("Endoflame Config");
 
@@ -83,6 +87,25 @@ public class GeneratingFloraConfig {
                 .defineInRange("Munchdew Range Y", 16, 1, Integer.MAX_VALUE);
 
         BUILDER.pop();
+
+        BUILDER.push("Entropinnyum Config");
+
+        ENTROPINNYUM_PROD =
+            BUILDER.comment("Production of entropinnyum")
+                .comment("How much mana entropinnyum produces each explosion (also defines max mana) [6500]")
+                .defineInRange("Entropinnyum Prod", 6500, 1, Integer.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Kekimurus Config");
+
+        KEKIMURUS_PROD =
+            BUILDER.comment("Production of kekimurus")
+                .comment("How much mana kekimurus produces each slice [1800]")
+                .defineInRange("Kekimurus Prod", 1800, 1, Integer.MAX_VALUE);
+
+        BUILDER.pop();
+
         SPEC = BUILDER.build();
     }
 }

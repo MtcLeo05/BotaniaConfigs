@@ -10,7 +10,7 @@ import vazkii.botania.common.block.flower.functional.OrechidIgnemBlockEntity;
 public class OrechidIgnemMixin {
 
     /**
-     * @author MtcLeo05
+     * @author Leo
      * @reason Configurable cost
      */
     @Overwrite(remap = false)

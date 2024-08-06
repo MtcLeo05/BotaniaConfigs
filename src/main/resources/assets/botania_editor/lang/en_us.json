@@ -11,5 +11,7 @@
   "botania_editor.prod": "Production / Tick: %d",
   "botania_editor.decay": "Decay: %d ticks",
   "botania_editor.prodOrb": "Production / Orb Exp: %d",
-  "botania_editor.prodExp": "Production / Player Exp: %d"
+  "botania_editor.prodExp": "Production / Player Exp: %d",
+  "botania_editor.prodExplosion": "Production / Explosion: %d",
+  "botania_editor.prodSlice": "Production / Slice: %d"
 }

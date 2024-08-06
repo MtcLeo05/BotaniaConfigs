@@ -52,6 +52,20 @@ public class JadeUtils {
                 Component.translatable("botania_editor.orechid_range", GeneratingFloraConfig.MUNCHDEW_RANGE.get(), GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get())
             )
         );
+
+        JADE_FLOWER_MAP.put(
+            EntropinnyumBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodExplosion", GeneratingFloraConfig.ENTROPINNYUM_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            KekimurusBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodSlice", GeneratingFloraConfig.KEKIMURUS_PROD.get())
+            )
+        );
     }
 
 }
