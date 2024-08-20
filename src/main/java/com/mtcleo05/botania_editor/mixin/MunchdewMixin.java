@@ -18,16 +18,19 @@ public class MunchdewMixin {
 
     @Redirect(method = "tickFlower", at = @At(value = "INVOKE", target = "Lnet/minecraft/core/BlockPos;betweenClosed(Lnet/minecraft/core/BlockPos;Lnet/minecraft/core/BlockPos;)Ljava/lang/Iterable;"))
     public Iterable<BlockPos> changeRange(BlockPos pFirstPos, BlockPos pSecondPos){
+        int centerX = (pFirstPos.getX() + pSecondPos.getX()) / 2;
+        int centerY = (pFirstPos.getY() + pSecondPos.getY()) / 2;
+        int centerZ = (pFirstPos.getZ() + pSecondPos.getZ()) / 2;
         return BlockPos.betweenClosed(
             new BlockPos(
-                -GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
-                -GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
-                -GeneratingFloraConfig.MUNCHDEW_RANGE.get()
+                centerX - GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
+                centerY - GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
+                centerZ - GeneratingFloraConfig.MUNCHDEW_RANGE.get()
             ),
             new BlockPos(
-                GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
-                GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
-                GeneratingFloraConfig.MUNCHDEW_RANGE.get()
+                centerX + GeneratingFloraConfig.MUNCHDEW_RANGE.get(),
+                centerY + GeneratingFloraConfig.MUNCHDEW_RANGE_Y.get(),
+                centerZ + GeneratingFloraConfig.MUNCHDEW_RANGE.get()
             )
         );
     }
