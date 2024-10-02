@@ -1,7 +1,6 @@
 package com.mtcleo05.botania_editor.utils;
 
 import com.mtcleo05.botania_editor.config.server.GeneratingFloraConfig;
-import com.mtcleo05.botania_editor.config.server.SpreaderConfig;
 import net.minecraft.network.chat.Component;
 import vazkii.botania.api.block_entity.GeneratingFlowerBlockEntity;
 import vazkii.botania.common.block.flower.generating.*;
@@ -64,6 +63,50 @@ public class JadeUtils {
             KekimurusBlockEntity.class,
             List.of(
                 Component.translatable("botania_editor.prodSlice", GeneratingFloraConfig.KEKIMURUS_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            GourmaryllisBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodMult", GeneratingFloraConfig.GOURMARYLLIS_MULT.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            NarslimmusBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodMult", GeneratingFloraConfig.GOURMARYLLIS_MULT.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            SpectrolusBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodSheep", GeneratingFloraConfig.SPECTROLUS_SHEEP_PROD.get()),
+                Component.translatable("botania_editor.prodBabySheep", GeneratingFloraConfig.SPECTROLUS_BABY_SHEEP_PROD.get()),
+                Component.translatable("botania_editor.prodItem", GeneratingFloraConfig.SPECTROLUS_ITEM_PROD.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            DandelifeonBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodMult", GeneratingFloraConfig.DANDELIFEON_MULT.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            RafflowsiaBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodMult", GeneratingFloraConfig.RAFFLOWSIA_MULT.get())
+            )
+        );
+
+        JADE_FLOWER_MAP.put(
+            ShulkMeNotBlockEntity.class,
+            List.of(
+                Component.translatable("botania_editor.prodMult", GeneratingFloraConfig.SHULKMENOT_MULT.get())
             )
         );
     }

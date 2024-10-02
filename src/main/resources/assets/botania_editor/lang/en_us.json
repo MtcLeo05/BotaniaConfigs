@@ -13,5 +13,9 @@
   "botania_editor.prodOrb": "Production / Orb Exp: %d",
   "botania_editor.prodExp": "Production / Player Exp: %d",
   "botania_editor.prodExplosion": "Production / Explosion: %d",
-  "botania_editor.prodSlice": "Production / Slice: %d"
+  "botania_editor.prodSlice": "Production / Slice: %d",
+  "botania_editor.prodMult": "Production Multiplier: %dx",
+  "botania_editor.prodSheep": "Production / Sheep: %d",
+  "botania_editor.prodBabySheep": "Production / Baby Sheep: %d",
+  "botania_editor.prodItem": "Production / Item: %d"
 }
