@@ -5,17 +5,23 @@
     "compatibilityLevel": "JAVA_8",
     "refmap": "botania_editor.refmap.json",
     "mixins": [
+        "DandelifelionMixin",
         "EndoflameMixin",
         "EntropinnyumMixin",
         "FluidGeneratorMixin",
+        "GourmaryllisMixin",
         "HydroangeasMixin",
         "KekimurusMixin",
         "LotusMixin",
         "ManaPoolMixin",
         "MunchdewMixin",
+        "NarslimmusMixin",
         "OrechidIgnemMixin",
         "OrechidMixin",
-        "RosaArcanaMixin"
+        "RafflowsiaMixin",
+        "RosaArcanaMixin",
+        "ShulkMeNotMixin",
+        "SpectrolusMixin"
     ],
     "client": [
     ],

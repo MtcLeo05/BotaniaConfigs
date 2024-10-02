@@ -25,6 +25,20 @@ public class GeneratingFloraConfig {
 
     public static final ForgeConfigSpec.ConfigValue<Integer> KEKIMURUS_PROD;
 
+    public static final ForgeConfigSpec.ConfigValue<Double> GOURMARYLLIS_MULT;
+
+    public static final ForgeConfigSpec.ConfigValue<Double> NARSLIMMUS_MULT;
+
+    public static final ForgeConfigSpec.ConfigValue<Integer> SPECTROLUS_SHEEP_PROD;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SPECTROLUS_BABY_SHEEP_PROD;
+    public static final ForgeConfigSpec.ConfigValue<Integer> SPECTROLUS_ITEM_PROD;
+
+    public static final ForgeConfigSpec.ConfigValue<Double> DANDELIFEON_MULT;
+
+    public static final ForgeConfigSpec.ConfigValue<Double> RAFFLOWSIA_MULT;
+
+    public static final ForgeConfigSpec.ConfigValue<Double> SHULKMENOT_MULT;
+
     static {
         BUILDER.push("Endoflame Config");
 
@@ -103,6 +117,72 @@ public class GeneratingFloraConfig {
             BUILDER.comment("Production of kekimurus")
                 .comment("How much mana kekimurus produces each slice [1800]")
                 .defineInRange("Kekimurus Prod", 1800, 1, Integer.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Gourmaryllis Config");
+
+        GOURMARYLLIS_MULT =
+            BUILDER.comment("Production multiplier for gourmaryllis")
+                .comment("By how much should the mana generated be multiplied [1]")
+                .comment("This value is multiplied with the food value to give the final mana")
+                .defineInRange("Gourmaryllis Mult", 1, 0, Double.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Narslimmus Config");
+
+        NARSLIMMUS_MULT =
+            BUILDER.comment("Production multiplier for narslimmus")
+                .comment("By how much should the mana generated be multiplied [1]")
+                .comment("This value is multiplied with the original mana given from the slime")
+                .defineInRange("Narslimmus Mult", 1, 0, Double.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Spectrolus Config");
+
+        SPECTROLUS_SHEEP_PROD =
+            BUILDER.comment("Production each sheep for spectrolus")
+                .comment("How much mana should be produced for each sheep sheared [5000]")
+                .defineInRange("Spectrolus Sheep Mult", 5000, 0, Integer.MAX_VALUE);
+
+        SPECTROLUS_BABY_SHEEP_PROD =
+            BUILDER.comment("Production each baby sheep for spectrolus")
+                .comment("How much mana should be produced for each baby sheep sheared [1]")
+                .defineInRange("Spectrolus Baby Sheep Mult", 1, 0, Integer.MAX_VALUE);
+
+        SPECTROLUS_ITEM_PROD =
+            BUILDER.comment("Production each item for spectrolus")
+                .comment("How much mana should be produced for each item [1200]")
+                .defineInRange("Spectrolus Item Mult", 1200, 0, Integer.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Dandelifeon Config");
+
+        DANDELIFEON_MULT =
+            BUILDER.comment("Production multiplier for dandelifeon")
+                .comment("By how much should the mana produced each cell be multiplied [1]")
+                .defineInRange("Dandelifeon Mult", 1, 0, Double.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Rafflowsia Config");
+
+        RAFFLOWSIA_MULT =
+            BUILDER.comment("Production multiplier for rafflowsia")
+                .comment("By how much should the mana produced each flower be multiplied [1]")
+                .defineInRange("Rafflowsia Mult", 1, 0, Double.MAX_VALUE);
+
+        BUILDER.pop();
+
+        BUILDER.push("Shulk Me Not Config");
+
+        SHULKMENOT_MULT =
+            BUILDER.comment("Production multiplier for shulk me not")
+                .comment("By how much should the mana produced each shulker be multiplied [1]")
+                .defineInRange("Shulk Me Not Mult", 1, 0, Double.MAX_VALUE);
 
         BUILDER.pop();
 

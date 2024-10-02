@@ -163,6 +163,11 @@ dependencies {
     runtimeOnly fg.deobf("mcp.mobius.waila:wthit:forge-${wthitVersion}")
     runtimeOnly fg.deobf("lol.bai:badpackets:forge-${badpacketsVersion}")
 
+    compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.5"))
+    implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.3.5")) {
+        jarJar.ranged(it, "[0.3.5,)")
+    }
+
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
 }
 
@@ -202,6 +207,10 @@ tasks.named('jar', Jar).configure {
 
     // This is the preferred method to reobfuscate your jar file
     finalizedBy 'reobfJar'
+}
+
+tasks.named('jarJar', Jar).configure {
+    archiveFileName = 'botania_editor-dev.jar'
 }
 
 tasks.withType(JavaCompile).configureEach {
